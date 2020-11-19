@@ -12,7 +12,7 @@ Users searching for an animal to love and respect as a member of their family ca
 
 
 
-## Pages
+## User flow
 
 - **404** - a 404 page is displayed when a user tries to access a page that doesn’t exist.
 
@@ -32,6 +32,8 @@ Users searching for an animal to love and respect as a member of their family ca
 
 - **animals adopted** - it's nice to see the new beautiful life of those who are already adopted, and everyone can do so!
 
+- **Q and A** - a page to answer users' questions.
+
 
 
 ## Backlog
@@ -39,15 +41,88 @@ Users searching for an animal to love and respect as a member of their family ca
 - **customized adoption forms**  - organisations could add their personalized forms in order to receive adoption proposals.
 - **verified feedbacks** - any user could leave them after adoptions, for both organisations and people who adopted animals.
 - **links to truthworthy animals professionals** - a page to help people find good professionals with positive education skills for example.
-- **donation page** - to help us save more animals.
+- **donation page** - to help us save more animals, everyone can help by giving something: time, financial support, physicial accessories, etc.
 - **animals adopted** - improvment so that the verified people who adopted them can add photos of their new life.
+- **organisations** - global information about those who have the animals in charge.
 - more to come!
 
 
 
 ## ROUTES
 
+- GET /
 
+  - renders the homepage
+
+- GET /auth/signup
+
+  - renders the signup form
+
+- POST /auth/signup
+
+  - renders the user's page
+  - body:
+    - username
+    - email
+    - password
+    - organisation
+
+- GET /auth/login
+
+  - renders the login form
+
+- POST /auth/login
+
+  - renders the user's page
+  - body:
+    - email
+    - password
+
+- POST /auth/logout
+
+  - body: (empty)
+
+- GET /animalsinneed
+
+  - renders the animals in need of a familly
+  - favorite buttons not a favorite yet
+  - not favorite anymore buttons if a favorite yet
+
+- POST /animalsinneed/create
+
+  - redirects to /animalsinneed if not an organisation user
+  - body:
+    - species
+    - name
+    - Date of birth
+    - Is the date of birth sure?
+    - breed
+    - adult size
+    - health condition
+    - localisation
+    - not fine with
+    - description
+    - status
+
+- GET /animalsinneed/:id
+
+  - renders the animal detail page
+  - favorite button not a favorite yet
+  - not favorite anymore button if a favorite yet
+
+- GET /animalsadopted
+
+  - renders the animals adopted page
+  - favorite buttons not a favorite yet
+  - not favorite anymore buttons if a favorite yet
+
+- GET /animalsadopted/:id
+
+  - renders the animal detail page
+  - favorite button not a favorite yet
+  - not favorite anymore button if a favorite yet
+
+  
 
 ## Models
 
@@ -117,7 +192,7 @@ Dog model:
 
   `name: { type: String, required: true, default: "Name to be given" },`
 
-  `brithDate: { type: date, required: true },`
+  `birthDate: { type: date, required: true },`
 
   `exactBirthDate: { type: Boolean, required: true },`
 
@@ -134,6 +209,8 @@ Dog model:
   `notFineWith: [String],`
 
   `organisation: { type: Schema.Types.ObjectId, ref: "Organisation" },`
+
+`status: {type: String, required: true, enum: ["to adopt", "adopted", "other"]}`
 
 `});`
 
