@@ -126,163 +126,116 @@ Users searching for an animal to love and respect as a member of their family ca
 
 ## Models
 
-
-
-User Model:
-
-`const userSchema = new Schema({`
-
-  `name: { type: String, required: true },`
-
-  `email: { type: mongoose.SchemaTypes.Email, required: true, unique: true },`
-
-  `password: { type: String, required: true },`
-
-  `favorites: {`
-
-​    `dogs: [{ type: Schema.Types.ObjectId, ref: "Dog" }],`
-
-​    `cats: [],`
-
-​    `horses: [],`
-
-  `},`
-
-`});`
-
-
-
-OrganisationUser model:
-
-`const organisationUserSchema = new Schema({`
-
-  `name: { type: String, required: true },`
-
-  `email: { type: mongoose.SchemaTypes.Email, required: true, unique: true },`
-
-  `password: {`
-
-​    `type: String,`
-
-​    `required: true,`
-
-​    `enum: Schema.Types.administrators,`
-
-​    `ref: "Organisation",`
-
-  `},`
-
-  `organisation: {`
-
-​    `type: Schema.Types.ObjectId,`
-
-​    `ref: "Organisation",`
-
-​    `required: true,`
-
-  `},`
-
-`});`
-
-
-
-Dog model:
-
-`const dogSchema = new Schema({`
-
-  `name: { type: String, required: true, default: "Name to be given" },`
-
-  `birthDate: { type: date, required: true },`
-
-  `exactBirthDate: { type: Boolean, required: true },`
-
-  `breed: [String],`
-
-  `adultSize: [{ type: String, enum: ["small", "medium", "large"] }],`
-
-  `healthCondition: [String],`
-
-  `localisation: String,`
-
-  `description: String,`
-
-  `notFineWith: [String],`
-
-  `organisation: { type: Schema.Types.ObjectId, ref: "Organisation" },`
-
-`status: {type: String, required: true, enum: ["to adopt", "adopted", "other"]}`
-
-`});`
-
-
-
-Organisation model:
-
-`const organisationSchema = new Schema({`
-
-  `name: { type: String, required: true },`
-
-  `localisation: String,`
-
-  `animals: [`
-
-​    `{`
-
-​      `type: String,`
-
-​      `enum: [`
-
-​        `"dogs",`
-
-​        `"cats",`
-
-​        `"horses",`
-
-​        `"pigs",`
-
-​        `"bunnies",`
-
-​        `"goats",`
-
-​        `"ferrets",`
-
-​        `"hamster",`
-
-​        `"donkeys",`
-
-​        `"mice",`
-
-​        `"rats",`
-
-​        `"others",`
-
-​      `],`
-
-​    `},`
-
-  `],`
-
-  `description: String,`
-
-  `administrators: [`
-
-​    `{ type: mongoose.SchemaTypes.Email, required: true, unique: true },`
-
-  `],`
-
-`});`
-
-
-
-Other animals models to come!
+#### User 
+
+```js
+{
+  name: { type: String, required: true },
+  email: { type: mongoose.SchemaTypes.Email, required: true, unique: true },
+  password: { type: String, required: true },
+  favorites: {type: Schema.Types.ObjectId, ref: "Animal" }
+}
+```
+
+#### OrganisationUser
+
+```js
+{
+  name: { type: String, required: true },
+  email: { type: mongoose.SchemaTypes.Email, required: true, unique: true },
+  password: {
+    type: String,
+    required: true,
+    ref: "Organisation",
+  },
+
+  organisation: {
+    type: Schema.Types.ObjectId,
+    ref: "Organisation",
+    required: true,
+  }
+}
+```
+
+#### Animal
+
+```js
+{
+  species: {type: String, required: true, enum: [
+        "dogs",
+        "cats",
+        "horses",
+        "pigs",
+        "bunnies",
+        "goats",
+        "ferrets",
+        "hamster",
+        "donkeys",
+        "mice",
+        "rats",
+        "others",
+      ]},
+  name: { type: String, required: true, default: "Name to be given" },
+  birthDate: { type: date, required: true },
+  exactBirthDate: { type: Boolean, required: true },
+  breed: [String],
+  adultSize: [{ type: String, enum: ["small", "medium", "large"] }],
+  healthCondition: [String],
+  localisation: String,
+  description: String,
+  notFineWith: [String],
+  organisation: { type: Schema.Types.ObjectId, ref: "Organisation" },
+  status: {type: String, required: true, enum: ["to adopt", "adopted", "other"] }
+}
+```
+
+#### Organisation
+
+```js
+{
+  name: { type: String, required: true },
+  localisation: String,
+  animals: [
+    {
+      type: String,
+      enum: [
+        "dogs",
+        "cats",
+        "horses",
+        "pigs",
+        "bunnies",
+        "goats",
+        "ferrets",
+        "hamster",
+        "donkeys",
+        "mice",
+        "rats",
+        "others",
+      ]
+    },
+  ],
+  description: String,
+  administrators: [
+    { type: mongoose.SchemaTypes.Email, required: true, unique: true },
+  ],
+}
+```
+
+
+<br>
 
 
 
 ## Links
 
+
+
 ### Trello
+
+
 
 ### Git
 
-### Slides
 
+
+### Slides

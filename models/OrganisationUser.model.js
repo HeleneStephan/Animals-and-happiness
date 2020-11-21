@@ -7,14 +7,14 @@ const organisationUserSchema = new Schema({
   password: {
     type: String,
     required: true,
-    enum: Schema.Types.administrators,
     ref: "Organisation",
   },
+
   organisation: {
     type: Schema.Types.ObjectId,
     ref: "Organisation",
     required: true,
-  },
+  }
 });
 
 const OrganisationUser = mongoose.model(
