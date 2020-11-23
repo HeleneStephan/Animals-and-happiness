@@ -3,20 +3,30 @@ const Layout = require("./Layout");
 const speciesList = require("../models/Animal.model");
 const { createElement } = require("react");
 
+function OneAnimal(animal) {
+  return (
+    <Layout>
+      <h1>I'm animal {animal}</h1>
+    </Layout>
+  );
+}
 function AnimalsInNeed(props) {
-  if (props.species) {
-    console.log(props.species);
-  }
-  if (props.breed) {
-    console.log(props.breed);
-  }
-  if (props.age) {
-    console.log(props.age);
-  }
-  if (props.genre) {
-    console.log(props.genre);
-  }
   let results = [];
+  if (!props.species) {
+    props.errorMessage = "Please select a species";
+  } else {
+    if (props.breed) {
+      console.log(props.breed);
+    }
+    if (props.age) {
+      console.log(props.age);
+    }
+    if (props.genre) {
+      console.log(props.genre);
+    }
+  }
+  //results[0] = "Joujou";
+  // results[1] = "test";
 
   return (
     <Layout>
@@ -41,9 +51,13 @@ function AnimalsInNeed(props) {
         ) : null}
       </form>
       <section className="animals-to-adopt">
-        {results.map((el) => {
-          return <h1>{el}</h1>;
-        })}
+        {results
+          ? results.map((animal) => {
+              return OneAnimal(animal);
+            })
+          : animals.map((animal) => {
+              return OneAnimal(animal);
+            })}
       </section>
     </Layout>
   );
