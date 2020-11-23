@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const erv = require("express-react-views");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const mongooseEmailType = require("mongoose-type-email");
 
 const authRouter = require("./routes/authRouter");
 const siteRouter = require("./routes/siteRouter");

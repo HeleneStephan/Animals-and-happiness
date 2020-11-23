@@ -3,16 +3,16 @@ const app = require("../app");
 var siteRouter = express.Router();
 
 // ROUTES
-app.get("/animalsinneed", (req, res, next) => {
-    res.render("Animalsinneed");
-  });
-
-app.get("/animalsadopted", (req, res, next) => {
-    res.render("Animalsadopted");
+siteRouter.get("/animalsinneed", (req, res, next) => {
+  res.render("Animalsinneed");
 });
 
-app.get("/search-animals-to-adopt", (req, res, next) => {
-    res.render("Animalsinneed", req.query);
-})
+siteRouter.get("/animalsadopted", (req, res, next) => {
+  res.render("Animalsadopted");
+});
+
+siteRouter.get("/search-animals-to-adopt", (req, res, next) => {
+  res.render("Animalsinneed", req.query);
+});
 
 module.exports = siteRouter;
