@@ -1,8 +1,8 @@
-# Project Name to come
+# Animals and Happiness
 
 ## Description
 
-**Name to come** is presenting animals who are in need of a family to share happiness!
+**Animals and Happiness** is presenting animals who are in need of a family to share happiness!
 
 Verified organisations can register and manage their animals in our databases.
 
@@ -131,20 +131,20 @@ Users searching for an animal to love and respect as a member of their family ca
 #### OrganisationUser
 
 ```js
+
 {
   name: { type: String, required: true },
   email: { type: mongoose.SchemaTypes.Email, required: true, unique: true },
   password: {
     type: String,
     required: true,
-    ref: "Organisation",
   },
 
-  organisation: {
+  organisations: [{
     type: Schema.Types.ObjectId,
     ref: "Organisation",
     required: true,
-  }
+  }]
 }
 ```
 

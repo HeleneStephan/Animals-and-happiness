@@ -7,14 +7,13 @@ const organisationUserSchema = new Schema({
   password: {
     type: String,
     required: true,
-    ref: "Organisation",
   },
 
-  organisation: {
+  organisations: [{
     type: Schema.Types.ObjectId,
     ref: "Organisation",
     required: true,
-  }
+  }]
 });
 
 const OrganisationUser = mongoose.model(

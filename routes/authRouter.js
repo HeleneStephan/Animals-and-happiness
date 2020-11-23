@@ -1,6 +1,7 @@
 var express = require("express");
+const app = require("../app");
 var authRouter = express.Router();
 
-// Your routes
+
 
 module.exports = authRouter;
