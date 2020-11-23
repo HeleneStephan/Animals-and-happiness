@@ -1,6 +1,6 @@
 const React = require("react");
 const Layout = require("./Layout");
-const Card = require("./components/Card");
+const Card = require("./Card");
 
 function Home() {
   return (

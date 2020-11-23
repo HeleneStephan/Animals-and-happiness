@@ -1,7 +1,5 @@
 # Project Name to come
 
-
-
 ## Description
 
 **Name to come** is presenting animals who are in need of a family to share happiness!
@@ -10,19 +8,17 @@ Verified organisations can register and manage their animals in our databases.
 
 Users searching for an animal to love and respect as a member of their family can also register in order to save their favorite animals and be provided with the organisations' contact information.
 
-
-
 ## User flow
 
 - **404** - a 404 page is displayed when a user tries to access a page that doesn’t exist.
 
-- **500** -  a 500 error page is displayed when I, as a developer, did something wrong.
+- **500** - a 500 error page is displayed when I, as a developer, did something wrong.
 
 - **homepage** - a homepage shows the goal of it all!
 
 - **sign up** - a user can sign up as an already verified organisation or as a regular user.
 
-- **login** - an organisation user can add their animals in need of a familiy to the database, change their status if they are adopted, and manage general organisation information. 
+- **login** - an organisation user can add their animals in need of a familiy to the database, change their status if they are adopted, and manage general organisation information.
 
   A regular user can save their favorite animals and see how to adopt them.
 
@@ -34,19 +30,16 @@ Users searching for an animal to love and respect as a member of their family ca
 
 - **Q and A** - a page to answer users' questions.
 
-
-
 ## Backlog
 
-- **customized adoption forms**  - organisations could add their personalized forms in order to receive adoption proposals.
+- **customized adoption forms** - organisations could add their personalized forms in order to receive adoption proposals.
 - **verified feedbacks** - any user could leave them after adoptions, for both organisations and people who adopted animals.
 - **links to truthworthy animals professionals** - a page to help people find good professionals with positive education skills for example.
 - **donation page** - to help us save more animals, everyone can help by giving something: time, financial support, physicial accessories, etc.
 - **animals adopted** - improvment so that the verified people who adopted them can add photos of their new life.
 - **organisations** - global information about those who have the animals in charge.
+- **multiple languages** - for the animals to be adopted in foreign countries!
 - more to come!
-
-
 
 ## ROUTES
 
@@ -122,11 +115,9 @@ Users searching for an animal to love and respect as a member of their family ca
   - favorite button not a favorite yet
   - not favorite anymore button if a favorite yet
 
-  
-
 ## Models
 
-#### User 
+#### User
 
 ```js
 {
@@ -221,21 +212,12 @@ Users searching for an animal to love and respect as a member of their family ca
 }
 ```
 
-
 <br>
-
-
 
 ## Links
 
-
-
 ### Trello
 
-
-
 ### Git
-
-
 
 ### Slides

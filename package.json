@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "card-react": "^1.2.7",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -22,5 +23,18 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
-  }
+  },
+  "description": "## Description",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeleneStephan/Animals-for-happiness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeleneStephan/Animals-for-happiness/issues"
+  },
+  "homepage": "https://github.com/HeleneStephan/Animals-for-happiness#readme"
 }
